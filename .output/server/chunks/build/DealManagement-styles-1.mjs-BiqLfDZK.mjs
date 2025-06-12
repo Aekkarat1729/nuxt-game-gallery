@@ -1,4 +1,0 @@
-const DealManagement_vue_vue_type_style_index_0_scoped_165347a6_lang = "@keyframes fadeIn-165347a6{0%{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.fade-in[data-v-165347a6]{animation:fadeIn-165347a6 .3s ease-out}input[data-v-165347a6]:focus,select[data-v-165347a6]:focus{transform:translateY(-1px)}.overflow-x-auto[data-v-165347a6]::-webkit-scrollbar{height:8px}.overflow-x-auto[data-v-165347a6]::-webkit-scrollbar-track{background:#f1f5f9;border-radius:4px}.overflow-x-auto[data-v-165347a6]::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}.overflow-x-auto[data-v-165347a6]::-webkit-scrollbar-thumb:hover{background:#94a3b8}";
-
-export { DealManagement_vue_vue_type_style_index_0_scoped_165347a6_lang as D };
-//# sourceMappingURL=DealManagement-styles-1.mjs-BiqLfDZK.mjs.map
