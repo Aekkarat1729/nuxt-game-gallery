@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-30',
   future: { compatibilityVersion: 4 },
   modules: [
-    '@nuxthub/core',
     '@nuxt/fonts',
     '@nuxt/ui',
     '@nuxt/eslint',
@@ -11,10 +10,11 @@ export default defineNuxtConfig({
     'nuxt-auth-utils',
     '@nuxt/image',
     
+    
   ],
-  
-  hub: {
-    blob: true
+  ssr: true,
+  nitro : {
+    preset: 'netlify',
   },
   experimental: {
     viewTransition: true

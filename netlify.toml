@@ -1,0 +1,7 @@
+[build]
+command = "npm build"
+publish = ".output/public"
+
+[functions]
+directory = ".output/functions"
+node_bundler = "esbuild"
