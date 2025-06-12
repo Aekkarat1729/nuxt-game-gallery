@@ -21,7 +21,8 @@
     "nuxt-auth-utils": "^0.4.2",
     "swiper": "^11.2.8",
     "vue-advanced-cropper": "^2.8.9",
-     "@iconify-json/simple-icons": "^1.2.5"
+     "@iconify-json/simple-icons": "^1.2.5",
+      "@iconify/utils": "^2.1.10"
   },
   "devDependencies": {
    
