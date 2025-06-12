@@ -11,21 +11,21 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@iconify-json/simple-icons": "^1.2.5",
+    "@iconify/utils": "^2.1.10",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/fonts": "^0.9.2",
     "@nuxt/image": "^1.10.0",
     "@nuxt/ui": "^2.18.6",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
+    "consola": "^3.4.2",
     "nuxt": "^3.17.5",
     "nuxt-auth-utils": "^0.4.2",
     "swiper": "^11.2.8",
-    "vue-advanced-cropper": "^2.8.9",
-     "@iconify-json/simple-icons": "^1.2.5",
-      "@iconify/utils": "^2.1.10"
+    "vue-advanced-cropper": "^2.8.9"
   },
   "devDependencies": {
-   
     "@nuxt/devtools": "^1.5.1",
     "eslint": "^9.11.1",
     "lint-staged": "^15.2.10",

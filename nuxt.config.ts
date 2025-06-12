@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   ],
    vite: {
     ssr: {
-      noExternal: ['@iconify/utils']
+      noExternal: ['@iconify/utils','consola']
     }
   },
   ssr: true,
