@@ -12,6 +12,11 @@ export default defineNuxtConfig({
     
     
   ],
+   vite: {
+    ssr: {
+      noExternal: ['@iconify/utils']
+    }
+  },
   ssr: true,
   nitro : {
     preset: 'node',

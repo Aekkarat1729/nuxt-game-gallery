@@ -4,7 +4,6 @@ import 'node:http';
 import 'node:https';
 import 'node:events';
 import 'node:buffer';
-import '@iconify/utils';
 import 'consola';
 import 'node:url';
 import 'ipx';
