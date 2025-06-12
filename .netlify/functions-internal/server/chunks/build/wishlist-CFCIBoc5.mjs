@@ -1,4 +1,4 @@
-import { _ as _export_sfc, d as useRouter, e as useNuxtApp, f as __nuxt_component_0$6, a as __nuxt_component_0$3 } from './server.mjs';
+import { _ as _export_sfc, c as useRouter, d as useNuxtApp, e as __nuxt_component_0$6, a as __nuxt_component_0$3 } from './server.mjs';
 import { defineComponent, ref, computed, mergeProps, withCtx, createVNode, createBlock, createTextVNode, openBlock, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderList, ssrRenderStyle, ssrRenderComponent, ssrIncludeBooleanAttr } from 'vue/server-renderer';
 import '../_/nitro.mjs';
@@ -16,7 +16,6 @@ import 'node:path';
 import 'vue-router';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -138,4 +137,4 @@ _sfc_main.setup = (props, ctx) => {
 const wishlist = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-fc63dce2"]]);
 
 export { wishlist as default };
-//# sourceMappingURL=wishlist-DU8GJUZk.mjs.map
+//# sourceMappingURL=wishlist-CFCIBoc5.mjs.map

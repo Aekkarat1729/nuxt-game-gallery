@@ -16,7 +16,6 @@ import 'node:fs';
 import 'node:path';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -196,4 +195,4 @@ _sfc_main.setup = (props, ctx) => {
 const ____slug_ = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 export { ____slug_ as default };
-//# sourceMappingURL=_...slug_-DIvP72tQ.mjs.map
+//# sourceMappingURL=_...slug_-zOaOZ01c.mjs.map

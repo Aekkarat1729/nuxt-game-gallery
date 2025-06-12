@@ -16,7 +16,6 @@ import 'node:path';
 import 'vue-router';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -79,4 +78,4 @@ _sfc_main.setup = (props, ctx) => {
 const error500 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-15ef2dd2"]]);
 
 export { error500 as default };
-//# sourceMappingURL=error-500-CE7Bd1eN.mjs.map
+//# sourceMappingURL=error-500-DOrn0ImZ.mjs.map

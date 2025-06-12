@@ -16,7 +16,6 @@ import 'node:fs';
 import 'node:path';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -121,4 +120,4 @@ _sfc_main.setup = (props, ctx) => {
 const DealManagement = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-165347a6"]]);
 
 export { DealManagement as default };
-//# sourceMappingURL=DealManagement-BOhRaqE2.mjs.map
+//# sourceMappingURL=DealManagement-D7sATFey.mjs.map

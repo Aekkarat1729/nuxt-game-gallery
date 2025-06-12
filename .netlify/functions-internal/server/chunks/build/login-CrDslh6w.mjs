@@ -1,4 +1,4 @@
-import { d as useRouter, e as useNuxtApp, a as __nuxt_component_0$3 } from './server.mjs';
+import { c as useRouter, d as useNuxtApp, a as __nuxt_component_0$3 } from './server.mjs';
 import { defineComponent, ref, mergeProps, withCtx, createTextVNode, createBlock, openBlock, createVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderAttr, ssrIncludeBooleanAttr, ssrRenderComponent } from 'vue/server-renderer';
 import '../_/nitro.mjs';
@@ -16,7 +16,6 @@ import 'node:path';
 import 'vue-router';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -105,4 +104,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=login-BjGqIIof.mjs.map
+//# sourceMappingURL=login-CrDslh6w.mjs.map

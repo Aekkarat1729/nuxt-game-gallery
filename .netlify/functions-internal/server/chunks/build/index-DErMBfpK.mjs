@@ -1,6 +1,6 @@
 import { defineComponent, ref, mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderAttr, ssrIncludeBooleanAttr, ssrLooseContain, ssrLooseEqual, ssrRenderList, ssrRenderClass } from 'vue/server-renderer';
-import { _ as _export_sfc, d as useRouter, e as useNuxtApp } from './server.mjs';
+import { _ as _export_sfc, c as useRouter, d as useNuxtApp } from './server.mjs';
 import '../_/nitro.mjs';
 import 'node:crypto';
 import 'node:http';
@@ -16,7 +16,6 @@ import 'node:path';
 import 'vue-router';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -86,4 +85,4 @@ _sfc_main.setup = (props, ctx) => {
 const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-29246373"]]);
 
 export { index as default };
-//# sourceMappingURL=index-DZ6ToFoR.mjs.map
+//# sourceMappingURL=index-DErMBfpK.mjs.map

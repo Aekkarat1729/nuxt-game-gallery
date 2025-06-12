@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { getImages } = useFile()
+
 
 useHead({
   link: [
@@ -23,7 +23,6 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-await getImages()
 </script>
 
 <template>

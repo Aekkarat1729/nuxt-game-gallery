@@ -1,4 +1,4 @@
-import { g as defineNuxtRouteMiddleware, n as navigateTo } from './server.mjs';
+import { i as defineNuxtRouteMiddleware, n as navigateTo } from './server.mjs';
 import 'vue';
 import '../_/nitro.mjs';
 import 'node:crypto';
@@ -15,7 +15,6 @@ import 'node:path';
 import 'vue-router';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import 'vue/server-renderer';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
@@ -58,4 +57,4 @@ const auth = defineNuxtRouteMiddleware(async (to) => {
 });
 
 export { auth as default };
-//# sourceMappingURL=auth-DW0qBCAj.mjs.map
+//# sourceMappingURL=auth-jQe1SpVU.mjs.map

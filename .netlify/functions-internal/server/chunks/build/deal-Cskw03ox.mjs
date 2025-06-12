@@ -1,4 +1,4 @@
-import { _ as _export_sfc, f as __nuxt_component_0$6, a as __nuxt_component_0$3 } from './server.mjs';
+import { _ as _export_sfc, e as __nuxt_component_0$6, a as __nuxt_component_0$3 } from './server.mjs';
 import { defineComponent, ref, computed, mergeProps, withCtx, createVNode, createBlock, createTextVNode, openBlock, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrIncludeBooleanAttr, ssrLooseContain, ssrLooseEqual, ssrRenderList, ssrRenderStyle, ssrRenderComponent, ssrRenderAttr, ssrRenderClass } from 'vue/server-renderer';
 import { useRouter } from 'vue-router';
@@ -16,7 +16,6 @@ import 'node:fs';
 import 'node:path';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -150,4 +149,4 @@ _sfc_main.setup = (props, ctx) => {
 const deal = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-eb87b09d"]]);
 
 export { deal as default };
-//# sourceMappingURL=deal-oqtTeK_x.mjs.map
+//# sourceMappingURL=deal-Cskw03ox.mjs.map

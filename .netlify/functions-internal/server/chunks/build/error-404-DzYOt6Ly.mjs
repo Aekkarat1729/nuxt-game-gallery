@@ -16,7 +16,6 @@ import 'node:path';
 import 'vue-router';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -100,4 +99,4 @@ _sfc_main.setup = (props, ctx) => {
 const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-3f6a44b2"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404-BEpnqGM_.mjs.map
+//# sourceMappingURL=error-404-DzYOt6Ly.mjs.map

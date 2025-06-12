@@ -16,7 +16,6 @@ import 'node:fs';
 import 'node:path';
 import 'tailwind-merge';
 import '@iconify/vue';
-import '@vue/shared';
 import '@iconify/utils/lib/css/icon';
 import '../routes/renderer.mjs';
 import 'vue-bundle-renderer/runtime';
@@ -135,4 +134,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=register-DiPLKiFw.mjs.map
+//# sourceMappingURL=register-DdGO68fv.mjs.map

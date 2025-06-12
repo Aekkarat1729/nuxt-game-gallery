@@ -1,13 +1,12 @@
-import { defineComponent, shallowRef, h, resolveComponent, computed, toValue, reactive, getCurrentInstance, provide, cloneVNode, createElementBlock, onServerPrefetch, hasInjectionContext, inject, ref, toRef, nextTick, unref, defineAsyncComponent, useSSRContext, watch, Suspense, Fragment, createApp, mergeProps, useAttrs, createVNode, resolveDynamicComponent, withCtx, renderSlot, createBlock, createCommentVNode, openBlock, toDisplayString, watchEffect, isRef, createSlots, renderList, shallowReactive, withAsyncContext, onErrorCaptured, effectScope, isReadonly, isShallow, isReactive, toRaw, getCurrentScope, readonly, shallowReadonly, onScopeDispose } from 'vue';
+import { defineComponent, shallowRef, h, resolveComponent, getCurrentInstance, provide, cloneVNode, createElementBlock, computed, toValue, onServerPrefetch, hasInjectionContext, ref, toRef, nextTick, unref, inject, defineAsyncComponent, useSSRContext, watch, Suspense, Fragment, createApp, mergeProps, useAttrs, createVNode, resolveDynamicComponent, withCtx, renderSlot, createBlock, createCommentVNode, openBlock, toDisplayString, watchEffect, isRef, createSlots, renderList, shallowReactive, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, getCurrentScope, readonly, shallowReadonly, onScopeDispose } from 'vue';
 import { t as parseQuery, v as hasProtocol, w as isScriptProtocol, x as joinURL, y as withQuery, z as sanitizeStatusCode, A as withTrailingSlash, B as withoutTrailingSlash, C as getContext, c as createError$1, $ as $fetch$1, D as baseURL, E as defu, F as defuFn, G as klona, H as createDefu, I as isEqual, J as diff, K as createHooks, L as executeAsync, M as toRouteMatcher, N as createRouter$1 } from '../_/nitro.mjs';
 import { RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { extendTailwindMerge, twJoin } from 'tailwind-merge';
 import { Icon, _api, addAPIProvider, setCustomIconsLoader, getIcon, loadIcon as loadIcon$1 } from '@iconify/vue';
-import { createHash } from 'node:crypto';
-import { isPlainObject } from '@vue/shared';
 import { ssrRenderComponent, ssrRenderAttrs, ssrRenderVNode, ssrRenderClass, ssrInterpolate, ssrRenderSlot, ssrRenderList, ssrRenderStyle, ssrRenderTeleport, ssrRenderSuspense } from 'vue/server-renderer';
 import { getIconCSS } from '@iconify/utils/lib/css/icon';
 import { u as useHead$1, h as headSymbol, a as useSeoMeta$1 } from '../routes/renderer.mjs';
+import 'node:crypto';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -23,14 +22,6 @@ import 'unhead/server';
 import 'devalue';
 import 'unhead/plugins';
 import 'unhead/utils';
-
-function serialize(o){return typeof o=="string"?`'${o}'`:new c().serialize(o)}const c=/*@__PURE__*/function(){class o{#t=new Map;compare(t,r){const e=typeof t,n=typeof r;return e==="string"&&n==="string"?t.localeCompare(r):e==="number"&&n==="number"?t-r:String.prototype.localeCompare.call(this.serialize(t,true),this.serialize(r,true))}serialize(t,r){if(t===null)return "null";switch(typeof t){case "string":return r?t:`'${t}'`;case "bigint":return `${t}n`;case "object":return this.$object(t);case "function":return this.$function(t)}return String(t)}serializeObject(t){const r=Object.prototype.toString.call(t);if(r!=="[object Object]")return this.serializeBuiltInType(r.length<10?`unknown:${r}`:r.slice(8,-1),t);const e=t.constructor,n=e===Object||e===void 0?"":e.name;if(n!==""&&globalThis[n]===e)return this.serializeBuiltInType(n,t);if(typeof t.toJSON=="function"){const i=t.toJSON();return n+(i!==null&&typeof i=="object"?this.$object(i):`(${this.serialize(i)})`)}return this.serializeObjectEntries(n,Object.entries(t))}serializeBuiltInType(t,r){const e=this["$"+t];if(e)return e.call(this,r);if(typeof r?.entries=="function")return this.serializeObjectEntries(t,r.entries());throw new Error(`Cannot serialize ${t}`)}serializeObjectEntries(t,r){const e=Array.from(r).sort((i,a)=>this.compare(i[0],a[0]));let n=`${t}{`;for(let i=0;i<e.length;i++){const[a,l]=e[i];n+=`${this.serialize(a,true)}:${this.serialize(l)}`,i<e.length-1&&(n+=",");}return n+"}"}$object(t){let r=this.#t.get(t);return r===void 0&&(this.#t.set(t,`#${this.#t.size}`),r=this.serializeObject(t),this.#t.set(t,r)),r}$function(t){const r=Function.prototype.toString.call(t);return r.slice(-15)==="[native code] }"?`${t.name||""}()[native]`:`${t.name}(${t.length})${r.replace(/\s*\n\s*/g,"")}`}$Array(t){let r="[";for(let e=0;e<t.length;e++)r+=this.serialize(t[e]),e<t.length-1&&(r+=",");return r+"]"}$Date(t){try{return `Date(${t.toISOString()})`}catch{return "Date(null)"}}$ArrayBuffer(t){return `ArrayBuffer[${new Uint8Array(t).join(",")}]`}$Set(t){return `Set${this.$Array(Array.from(t).sort((r,e)=>this.compare(r,e)))}`}$Map(t){return this.serializeObjectEntries("Map",t.entries())}}for(const s of ["Error","RegExp","URL"])o.prototype["$"+s]=function(t){return `${s}(${t})`};for(const s of ["Int8Array","Uint8Array","Uint8ClampedArray","Int16Array","Uint16Array","Int32Array","Uint32Array","Float32Array","Float64Array"])o.prototype["$"+s]=function(t){return `${s}[${t.join(",")}]`};for(const s of ["BigInt64Array","BigUint64Array"])o.prototype["$"+s]=function(t){return `${s}[${t.join("n,")}${t.length>0?"n":""}]`};return o}();
-
-const e=globalThis.process?.getBuiltinModule?.("crypto")?.hash,r="sha256",s="base64url";function digest(t){if(e)return e(r,t,s);const o=createHash(r).update(t);return globalThis.process?.versions?.webcontainer?o.digest().toString(s):o.digest(s)}
-
-function hash(input) {
-  return digest(serialize(input));
-}
 
 const DEBOUNCE_DEFAULTS = {
   trailing: true
@@ -463,52 +454,52 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CcMp_uPs.mjs')
+    component: () => import('./index-BNNd0gRm.mjs')
   },
   {
     name: "login",
     path: "/login",
-    component: () => import('./login-BjGqIIof.mjs')
+    component: () => import('./login-CrDslh6w.mjs')
   },
   {
     name: "register",
     path: "/register",
-    component: () => import('./register-DiPLKiFw.mjs')
+    component: () => import('./register-DdGO68fv.mjs')
   },
   {
     name: "user-deal",
     path: "/user/deal",
-    component: () => import('./deal-oqtTeK_x.mjs')
+    component: () => import('./deal-Cskw03ox.mjs')
   },
   {
     name: "user",
     path: "/user",
-    component: () => import('./index-638YVlDE.mjs')
+    component: () => import('./index-z1VUUpHW.mjs')
   },
   {
     name: "admin",
     path: "/admin",
-    component: () => import('./index-DZ6ToFoR.mjs')
+    component: () => import('./index-DErMBfpK.mjs')
   },
   {
     name: "user-wishlist",
     path: "/user/wishlist",
-    component: () => import('./wishlist-DU8GJUZk.mjs')
+    component: () => import('./wishlist-CFCIBoc5.mjs')
   },
   {
     name: "detail-slug",
     path: "/detail/:slug(.*)*",
-    component: () => import('./_...slug_-DIvP72tQ.mjs')
+    component: () => import('./_...slug_-zOaOZ01c.mjs')
   },
   {
     name: "admin-DealManagement",
     path: "/admin/DealManagement",
-    component: () => import('./DealManagement-BOhRaqE2.mjs')
+    component: () => import('./DealManagement-D7sATFey.mjs')
   },
   {
     name: "admin-GameManagement",
     path: "/admin/GameManagement",
-    component: () => import('./GameManagement-D1m7tgXy.mjs')
+    component: () => import('./GameManagement-BgDew4N2.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -634,7 +625,7 @@ const globalMiddleware = [
   manifest_45route_45rule
 ];
 const namedMiddleware = {
-  auth: () => import('./auth-DW0qBCAj.mjs')
+  auth: () => import('./auth-jQe1SpVU.mjs')
 };
 const plugin = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",
@@ -1665,39 +1656,139 @@ const plugin_MeUvTuoKUi51yb_kBguab6hdcExVXeTtZtTg9TZZBB8 = /* @__PURE__ */ defin
   // For type portability
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 });
-function useToast() {
-  const notifications2 = useState("notifications", () => []);
-  function add(notification2) {
-    const body = {
-      id: (/* @__PURE__ */ new Date()).getTime().toString(),
-      ...notification2
-    };
-    const index2 = notifications2.value.findIndex((n) => n.id === body.id);
-    if (index2 === -1) {
-      notifications2.value.push(body);
-    }
-    return body;
-  }
-  function remove(id) {
-    notifications2.value = notifications2.value.filter((n) => n.id !== id);
-  }
-  function update(id, notification2) {
-    const index2 = notifications2.value.findIndex((n) => n.id === id);
-    if (index2 !== -1) {
-      const previous = notifications2.value[index2];
-      notifications2.value.splice(index2, 1, { ...previous, ...notification2 });
-    }
-  }
-  function clear2() {
-    notifications2.value = [];
-  }
-  return {
-    add,
-    remove,
-    update,
-    clear: clear2
-  };
+const plugins = [
+  unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU,
+  plugin,
+  session_server_fi7D7q_WjeXZl2Hh05GOWPuIxZQWSnpY3ifY_sSGHJo,
+  revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms,
+  components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8,
+  slideovers_g1RyjnFCC2XCqS3NLpv7yngCZ5AzjpmT7UJr_dW3BbY,
+  modals_JhH8M1KzF3pQyhcHsoNTBLd8tKGet6zo2zTBVDe7nK4,
+  colors_E7kSti5pGZ28QhUUurq6gGRU3l65WuXO_KJC3GQgzFo,
+  plugin_server_9Ca9_HhnjAGwBWpwAydRauMHxWoxTDY60BrArRnXN_A,
+  plugin_MeUvTuoKUi51yb_kBguab6hdcExVXeTtZtTg9TZZBB8
+];
+async function loadIcon(name, timeout) {
+  if (!name)
+    return null;
+  const _icon = getIcon(name);
+  if (_icon)
+    return _icon;
+  let timeoutWarn;
+  const load = loadIcon$1(name).catch(() => {
+    console.warn(`[Icon] failed to load icon \`${name}\``);
+    return null;
+  });
+  if (timeout > 0)
+    await Promise.race([
+      load,
+      new Promise((resolve) => {
+        timeoutWarn = setTimeout(() => {
+          console.warn(`[Icon] loading icon \`${name}\` timed out after ${timeout}ms`);
+          resolve();
+        }, timeout);
+      })
+    ]).finally(() => clearTimeout(timeoutWarn));
+  else
+    await load;
+  return getIcon(name);
 }
+function useResolvedName(getName) {
+  const options = useAppConfig().icon;
+  const collections = (options.collections || []).sort((a, b) => b.length - a.length);
+  return computed(() => {
+    var _a2;
+    const name = getName();
+    const bare = name.startsWith(options.cssSelectorPrefix) ? name.slice(options.cssSelectorPrefix.length) : name;
+    const resolved = ((_a2 = options.aliases) == null ? void 0 : _a2[bare]) || bare;
+    if (!resolved.includes(":")) {
+      const collection = collections.find((c) => resolved.startsWith(c + "-"));
+      return collection ? collection + ":" + resolved.slice(collection.length + 1) : resolved;
+    }
+    return resolved;
+  });
+}
+function resolveCustomizeFn(customize, globalCustomize) {
+  if (customize === false) return void 0;
+  if (customize === true || customize === null) return globalCustomize;
+  return customize;
+}
+const SYMBOL_SERVER_CSS = "NUXT_ICONS_SERVER_CSS";
+function escapeCssSelector(selector) {
+  return selector.replace(/([^\w-])/g, "\\$1");
+}
+const NuxtIconCss = /* @__PURE__ */ defineComponent({
+  name: "NuxtIconCss",
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    customize: {
+      type: [Function, Boolean, null],
+      default: null,
+      required: false
+    }
+  },
+  setup(props) {
+    const nuxt = useNuxtApp();
+    const options = useAppConfig().icon;
+    const cssClass = computed(() => props.name ? options.cssSelectorPrefix + props.name : "");
+    const selector = computed(() => "." + escapeCssSelector(cssClass.value));
+    function getCSS(icon, withLayer = true) {
+      let iconSelector = selector.value;
+      if (options.cssWherePseudo) {
+        iconSelector = `:where(${iconSelector})`;
+      }
+      const css = getIconCSS(icon, {
+        iconSelector,
+        format: "compressed",
+        customise: resolveCustomizeFn(props.customize, options.customize)
+      });
+      if (options.cssLayer && withLayer) {
+        return `@layer ${options.cssLayer} { ${css} }`;
+      }
+      return css;
+    }
+    onServerPrefetch(async () => {
+      var _a2;
+      {
+        const configs = (/* @__PURE__ */ useRuntimeConfig()).icon || {};
+        if (!((_a2 = configs == null ? void 0 : configs.serverKnownCssClasses) == null ? void 0 : _a2.includes(cssClass.value))) {
+          const icon = await loadIcon(props.name, options.fetchTimeout).catch(() => null);
+          if (!icon)
+            return null;
+          let ssrCSS = nuxt.vueApp._context.provides[SYMBOL_SERVER_CSS];
+          if (!ssrCSS) {
+            ssrCSS = nuxt.vueApp._context.provides[SYMBOL_SERVER_CSS] = /* @__PURE__ */ new Map();
+            nuxt.runWithContext(() => {
+              useHead({
+                style: [
+                  () => {
+                    const sep = "";
+                    let css = Array.from(ssrCSS.values()).sort().join(sep);
+                    if (options.cssLayer) {
+                      css = `@layer ${options.cssLayer} {${sep}${css}${sep}}`;
+                    }
+                    return { innerHTML: css };
+                  }
+                ]
+              }, {
+                tagPriority: "low"
+              });
+            });
+          }
+          if (props.name && !ssrCSS.has(props.name)) {
+            const css = getCSS(icon, false);
+            ssrCSS.set(props.name, css);
+          }
+          return null;
+        }
+      }
+    });
+    return () => h("span", { class: ["iconify", cssClass.value] });
+  }
+});
 defineComponent({
   name: "ServerPlaceholder",
   render() {
@@ -1963,281 +2054,6 @@ const getDefaultCachedData = (key, nuxtApp, ctx) => {
     return nuxtApp.static.data[key];
   }
 };
-function useFetch(request, arg1, arg2) {
-  const [opts = {}, autoKey] = typeof arg1 === "string" ? [{}, arg1] : [arg1, arg2];
-  const _request = computed(() => toValue(request));
-  const key = computed(() => toValue(opts.key) || "$f" + hash([autoKey, typeof _request.value === "string" ? _request.value : "", ...generateOptionSegments(opts)]));
-  if (!opts.baseURL && typeof _request.value === "string" && (_request.value[0] === "/" && _request.value[1] === "/")) {
-    throw new Error('[nuxt] [useFetch] the request URL must not start with "//".');
-  }
-  const {
-    server,
-    lazy,
-    default: defaultFn,
-    transform,
-    pick: pick2,
-    watch: watchSources,
-    immediate,
-    getCachedData,
-    deep,
-    dedupe,
-    ...fetchOptions
-  } = opts;
-  const _fetchOptions = reactive({
-    ...fetchDefaults,
-    ...fetchOptions,
-    cache: typeof opts.cache === "boolean" ? void 0 : opts.cache
-  });
-  const _asyncDataOptions = {
-    server,
-    lazy,
-    default: defaultFn,
-    transform,
-    pick: pick2,
-    immediate,
-    getCachedData,
-    deep,
-    dedupe,
-    watch: watchSources === false ? [] : [...watchSources || [], _fetchOptions]
-  };
-  let controller;
-  const asyncData = useAsyncData(watchSources === false ? key.value : key, () => {
-    var _a2;
-    (_a2 = controller == null ? void 0 : controller.abort) == null ? void 0 : _a2.call(controller, new DOMException("Request aborted as another request to the same endpoint was initiated.", "AbortError"));
-    controller = typeof AbortController !== "undefined" ? new AbortController() : {};
-    const timeoutLength = toValue(opts.timeout);
-    let timeoutId;
-    if (timeoutLength) {
-      timeoutId = setTimeout(() => controller.abort(new DOMException("Request aborted due to timeout.", "AbortError")), timeoutLength);
-      controller.signal.onabort = () => clearTimeout(timeoutId);
-    }
-    let _$fetch = opts.$fetch || globalThis.$fetch;
-    if (!opts.$fetch) {
-      const isLocalFetch = typeof _request.value === "string" && _request.value[0] === "/" && (!toValue(opts.baseURL) || toValue(opts.baseURL)[0] === "/");
-      if (isLocalFetch) {
-        _$fetch = useRequestFetch();
-      }
-    }
-    return _$fetch(_request.value, { signal: controller.signal, ..._fetchOptions }).finally(() => {
-      clearTimeout(timeoutId);
-    });
-  }, _asyncDataOptions);
-  return asyncData;
-}
-function generateOptionSegments(opts) {
-  var _a2;
-  const segments = [
-    ((_a2 = toValue(opts.method)) == null ? void 0 : _a2.toUpperCase()) || "GET",
-    toValue(opts.baseURL)
-  ];
-  for (const _obj of [opts.params || opts.query]) {
-    const obj = toValue(_obj);
-    if (!obj) {
-      continue;
-    }
-    const unwrapped = {};
-    for (const [key, value] of Object.entries(obj)) {
-      unwrapped[toValue(key)] = toValue(value);
-    }
-    segments.push(unwrapped);
-  }
-  if (opts.body) {
-    const value = toValue(opts.body);
-    if (!value) {
-      segments.push(hash(value));
-    } else if (value instanceof ArrayBuffer) {
-      segments.push(hash(Object.fromEntries([...new Uint8Array(value).entries()].map(([k, v]) => [k, v.toString()]))));
-    } else if (value instanceof FormData) {
-      const obj = {};
-      for (const entry2 of value.entries()) {
-        const [key, val] = entry2;
-        obj[key] = val instanceof File ? val.name : val;
-      }
-      segments.push(hash(obj));
-    } else if (isPlainObject(value)) {
-      segments.push(hash(reactive(value)));
-    } else {
-      try {
-        segments.push(hash(value));
-      } catch {
-        console.warn("[useFetch] Failed to hash body", value);
-      }
-    }
-  }
-  return segments;
-}
-const files_vHA9P4CZuP_WKcBJ_0Rs_e8Uau2h3zvnGkqcFG5v9fA = /* @__PURE__ */ defineNuxtPlugin(() => {
-  const images = ref();
-  const router = useRouter();
-  const toast = useToast();
-  const upload = useUpload("/api/images/upload", { multiple: false });
-  async function getImages() {
-    const { data: files } = await useFetch("/api/images", "$krc6J6-09i");
-    images.value = files.value;
-  }
-  async function uploadImage(image, filter = false) {
-    await upload(image).catch((err) => {
-      var _a2;
-      return toast.add({
-        color: "red",
-        title: "Failed to upload image",
-        description: ((_a2 = err.data) == null ? void 0 : _a2.message) || err.message
-      });
-    });
-    getImages();
-    if (filter) {
-      router.push("/");
-    }
-  }
-  async function deleteImage(pathname) {
-    await $fetch(`/api/images/${pathname}`, { method: "DELETE" });
-    getImages();
-  }
-  return {
-    provide: {
-      file: {
-        getImages,
-        images,
-        uploadImage,
-        deleteImage
-      }
-    }
-  };
-});
-const plugins = [
-  unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU,
-  plugin,
-  session_server_fi7D7q_WjeXZl2Hh05GOWPuIxZQWSnpY3ifY_sSGHJo,
-  revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms,
-  components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8,
-  slideovers_g1RyjnFCC2XCqS3NLpv7yngCZ5AzjpmT7UJr_dW3BbY,
-  modals_JhH8M1KzF3pQyhcHsoNTBLd8tKGet6zo2zTBVDe7nK4,
-  colors_E7kSti5pGZ28QhUUurq6gGRU3l65WuXO_KJC3GQgzFo,
-  plugin_server_9Ca9_HhnjAGwBWpwAydRauMHxWoxTDY60BrArRnXN_A,
-  plugin_MeUvTuoKUi51yb_kBguab6hdcExVXeTtZtTg9TZZBB8,
-  files_vHA9P4CZuP_WKcBJ_0Rs_e8Uau2h3zvnGkqcFG5v9fA
-];
-async function loadIcon(name, timeout) {
-  if (!name)
-    return null;
-  const _icon = getIcon(name);
-  if (_icon)
-    return _icon;
-  let timeoutWarn;
-  const load = loadIcon$1(name).catch(() => {
-    console.warn(`[Icon] failed to load icon \`${name}\``);
-    return null;
-  });
-  if (timeout > 0)
-    await Promise.race([
-      load,
-      new Promise((resolve) => {
-        timeoutWarn = setTimeout(() => {
-          console.warn(`[Icon] loading icon \`${name}\` timed out after ${timeout}ms`);
-          resolve();
-        }, timeout);
-      })
-    ]).finally(() => clearTimeout(timeoutWarn));
-  else
-    await load;
-  return getIcon(name);
-}
-function useResolvedName(getName) {
-  const options = useAppConfig().icon;
-  const collections = (options.collections || []).sort((a, b) => b.length - a.length);
-  return computed(() => {
-    var _a2;
-    const name = getName();
-    const bare = name.startsWith(options.cssSelectorPrefix) ? name.slice(options.cssSelectorPrefix.length) : name;
-    const resolved = ((_a2 = options.aliases) == null ? void 0 : _a2[bare]) || bare;
-    if (!resolved.includes(":")) {
-      const collection = collections.find((c) => resolved.startsWith(c + "-"));
-      return collection ? collection + ":" + resolved.slice(collection.length + 1) : resolved;
-    }
-    return resolved;
-  });
-}
-function resolveCustomizeFn(customize, globalCustomize) {
-  if (customize === false) return void 0;
-  if (customize === true || customize === null) return globalCustomize;
-  return customize;
-}
-const SYMBOL_SERVER_CSS = "NUXT_ICONS_SERVER_CSS";
-function escapeCssSelector(selector) {
-  return selector.replace(/([^\w-])/g, "\\$1");
-}
-const NuxtIconCss = /* @__PURE__ */ defineComponent({
-  name: "NuxtIconCss",
-  props: {
-    name: {
-      type: String,
-      required: true
-    },
-    customize: {
-      type: [Function, Boolean, null],
-      default: null,
-      required: false
-    }
-  },
-  setup(props) {
-    const nuxt = useNuxtApp();
-    const options = useAppConfig().icon;
-    const cssClass = computed(() => props.name ? options.cssSelectorPrefix + props.name : "");
-    const selector = computed(() => "." + escapeCssSelector(cssClass.value));
-    function getCSS(icon, withLayer = true) {
-      let iconSelector = selector.value;
-      if (options.cssWherePseudo) {
-        iconSelector = `:where(${iconSelector})`;
-      }
-      const css = getIconCSS(icon, {
-        iconSelector,
-        format: "compressed",
-        customise: resolveCustomizeFn(props.customize, options.customize)
-      });
-      if (options.cssLayer && withLayer) {
-        return `@layer ${options.cssLayer} { ${css} }`;
-      }
-      return css;
-    }
-    onServerPrefetch(async () => {
-      var _a2;
-      {
-        const configs = (/* @__PURE__ */ useRuntimeConfig()).icon || {};
-        if (!((_a2 = configs == null ? void 0 : configs.serverKnownCssClasses) == null ? void 0 : _a2.includes(cssClass.value))) {
-          const icon = await loadIcon(props.name, options.fetchTimeout).catch(() => null);
-          if (!icon)
-            return null;
-          let ssrCSS = nuxt.vueApp._context.provides[SYMBOL_SERVER_CSS];
-          if (!ssrCSS) {
-            ssrCSS = nuxt.vueApp._context.provides[SYMBOL_SERVER_CSS] = /* @__PURE__ */ new Map();
-            nuxt.runWithContext(() => {
-              useHead({
-                style: [
-                  () => {
-                    const sep = "";
-                    let css = Array.from(ssrCSS.values()).sort().join(sep);
-                    if (options.cssLayer) {
-                      css = `@layer ${options.cssLayer} {${sep}${css}${sep}}`;
-                    }
-                    return { innerHTML: css };
-                  }
-                ]
-              }, {
-                tagPriority: "low"
-              });
-            });
-          }
-          if (props.name && !ssrCSS.has(props.name)) {
-            const css = getCSS(icon, false);
-            ssrCSS.set(props.name, css);
-          }
-          return null;
-        }
-      }
-    });
-    return () => h("span", { class: ["iconify", cssClass.value] });
-  }
-});
 const NuxtIconSvg = /* @__PURE__ */ defineComponent({
   name: "NuxtIconSvg",
   props: {
@@ -3740,6 +3556,39 @@ _sfc_main$4.setup = (props, ctx) => {
   return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
 const __nuxt_component_0$1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$4, [["ssrRender", _sfc_ssrRender$1]]), { __name: "UNotification" });
+function useToast() {
+  const notifications2 = useState("notifications", () => []);
+  function add(notification2) {
+    const body = {
+      id: (/* @__PURE__ */ new Date()).getTime().toString(),
+      ...notification2
+    };
+    const index2 = notifications2.value.findIndex((n) => n.id === body.id);
+    if (index2 === -1) {
+      notifications2.value.push(body);
+    }
+    return body;
+  }
+  function remove(id) {
+    notifications2.value = notifications2.value.filter((n) => n.id !== id);
+  }
+  function update(id, notification2) {
+    const index2 = notifications2.value.findIndex((n) => n.id === id);
+    if (index2 !== -1) {
+      const previous = notifications2.value[index2];
+      notifications2.value.splice(index2, 1, { ...previous, ...notification2 });
+    }
+  }
+  function clear2() {
+    notifications2.value = [];
+  }
+  return {
+    add,
+    remove,
+    update,
+    clear: clear2
+  };
+}
 const config = mergeConfig(appConfig.ui.strategy, appConfig.ui.notifications, notifications);
 const _sfc_main$3 = defineComponent({
   components: {
@@ -3905,18 +3754,12 @@ function normalizeSlot(slot, data) {
   const slotContent = slot(data);
   return slotContent.length === 1 ? h(slotContent[0]) : h(Fragment, void 0, slotContent);
 }
-function useFile() {
-  const { $file } = useNuxtApp();
-  return $file;
-}
 const title = "NuxtHub Image Gallery Starter";
 const description = "A Nuxt template to build your full-stack image gallery application on the edge.";
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "app",
   __ssrInlineRender: true,
-  async setup(__props) {
-    let __temp, __restore;
-    const { getImages } = useFile();
+  setup(__props) {
     useHead({
       link: [
         { rel: "icon", href: "/favicon.ico" }
@@ -3934,7 +3777,6 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       ogImage: "https://image-gallery.nuxt.dev/social-card.png",
       twitterCard: "summary_large_image"
     });
-    [__temp, __restore] = withAsyncContext(() => getImages()), await __temp, __restore();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_UNotifications = __nuxt_component_0;
       const _component_NuxtPage = __nuxt_component_1;
@@ -3974,8 +3816,8 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description2 = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-BEpnqGM_.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-CE7Bd1eN.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-DzYOt6Ly.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-DOrn0ImZ.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description2), stack: unref(stack) }, _attrs), null, _parent));
@@ -4057,5 +3899,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { _export_sfc as _, __nuxt_component_0$3 as a, useFetch as b, useRuntimeConfig as c, useRouter as d, entry$1 as default, useNuxtApp as e, __nuxt_component_0$6 as f, defineNuxtRouteMiddleware as g, navigateTo as n, useHead as u };
+export { _export_sfc as _, __nuxt_component_0$3 as a, useRuntimeConfig as b, useRouter as c, useNuxtApp as d, entry$1 as default, __nuxt_component_0$6 as e, fetchDefaults as f, useAsyncData as g, useRequestFetch as h, defineNuxtRouteMiddleware as i, navigateTo as n, useHead as u };
 //# sourceMappingURL=server.mjs.map
