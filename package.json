@@ -20,10 +20,11 @@
     "nuxt": "^3.17.5",
     "nuxt-auth-utils": "^0.4.2",
     "swiper": "^11.2.8",
-    "vue-advanced-cropper": "^2.8.9"
+    "vue-advanced-cropper": "^2.8.9",
+     "@iconify-json/simple-icons": "^1.2.5"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.5",
+   
     "@nuxt/devtools": "^1.5.1",
     "eslint": "^9.11.1",
     "lint-staged": "^15.2.10",
